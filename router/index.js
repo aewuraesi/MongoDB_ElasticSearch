@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 
 router.get('/', FarmController.GetFarms).post('/', FarmController.CreateFarm);
 
-router.get('/searcher', FarmController.FullSearchFarm);
+router.post('/searcher', FarmController.FullSearchFarm);
 
 router.get('/allsearch', FarmController.SearchFarms);
 

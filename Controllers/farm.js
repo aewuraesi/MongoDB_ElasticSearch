@@ -114,14 +114,16 @@ const SearchFarms = async (req, res, next) => {
 
 const FullSearchFarm = async (req, res, next) => {
   try {
-    if (!Object.keys(req.query).length) {
+    // if (!Object.keys(req.query).length) {
+      if (!req.body.farm) {
       throw 'No parameter entered!';
     }
     Api_Farm.search(
       {
         query_string: {
           fields: ['name', 'crop'],
-          query: req.query.name || req.query.crop
+          // query: req.query.name || req.query.crop
+          query: req.body.farm
         }
       },
       function(err, results) {
@@ -129,10 +131,13 @@ const FullSearchFarm = async (req, res, next) => {
         var data = results.hits.hits.map(function(hit) {
           return hit;
         });
-        if (data.length > 0) {
-          return res.send({ success: true, data: data[0]._source });
+        if (data.length > 0) {          
+          // return res.render('oneFarm', {success:'success: true', data:data, error:null});
+          return res.json({success:'true', data:data, error:null});
         } else {
-          return res.send({ success: true, message: 'No farm found', data: [] });
+          //  return res.render('oneFarm',{success:'success: false',data:null, error:'No farm found'});
+          return res.json({success:'false',data:null, error:'No farm found'});
+
         }
       }
     );

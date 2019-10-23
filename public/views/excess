@@ -1,0 +1,29 @@
+<%= success %>
+		<% if (data != null ) { %>
+		<% if (data.length > 0 ) { %>
+		<div style="text-align: center;">
+			<% if (data.length == 1 ) { %>
+			Total : <%= data.length %> farm
+			<hr>
+			<% } %>
+			<% if (data.length > 1 ) { %>
+			Total : <%= data.length %> farms
+			<hr>
+			<% } %>
+			<% for (var i = 0, len = data.length; i < len; i++){ %>
+			name: <%= data[i]._source.name %>
+			<br>
+			crop: <%= data[i]._source.crop %>
+			<br>
+			acreage: <%= data[i]._source.acreage %> <span style="text-transform: lowercase;">acre</span>
+			<hr>
+			<% } %>
+		</div>
+		<% } %>
+		<% } %>
+
+		<% if (data == null ) { %>
+		<div style="text-align: center; font-size: 30px;">
+			<%= error %>
+		</div>
+		<% } %>

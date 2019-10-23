@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Complete Farmer</title>
+	<style>
+		.farm-form {
+			width: 400px;
+			margin: 0% auto 0%;
+			font-family: Tahoma, Geneva, sans-serif;
+			padding: 20px;
+			text-transform: capitalize;
+		}
+
+		.resultsDiv {
+			width: 400px;
+			margin: 0% auto 3%;
+			font-family: Tahoma, Geneva, sans-serif;
+			padding: 10px;
+			text-transform: capitalize;
+			letter-spacing: 1.2px;
+		}
+
+		.resultsDiv h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 30px;
+			padding: 10px 0 10px 0;
+			margin: 0;
+		}
+
+		.farm-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 30px;
+			padding: 10px 0 10px 0;
+		}
+
+		.farm-form input[type="password"],
+		.farm-form input[type="text"] {
+			width: 100%;
+			padding: 20px;
+			border: 1px solid #dddddd;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			font-size: 15px;
+		}
+
+		.farm-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+			font-size: 15px;
+		}
+
+		nav ul {
+			background-color: rosybrown;
+			height: 50px;
+			margin: 0;
+			padding-left: 60vmax;
+		}
+
+		nav ul li {
+			float: left;
+			padding: 15px;
+			list-style: none;
+			font-size: 18px;
+		}
+
+		nav ul li:hover {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="farm-form">
+		<h1>Find Farm</h1>
+		<input type="text" id="search" name="farm" placeholder="Name of Farm" required>
+	</div>
+	<div class="resultsDiv" id="searchContainer" hidden>
+		<h1>Results</h1>
+		<div id="searchResults" style="text-align: center;">
+		</div>
+	</div>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/jsFolder/instantSearch.js"></script>
+
+</html>
