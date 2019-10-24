@@ -15,7 +15,7 @@ $(function(){
                     
                     console.log('success!');
                     $('#searchResults').append(` Total :<span>${data.data.length} Farm<span style="text-transform:lowercase">(s)</span></span><hr>`);
-                   
+                    var availablefarms = [];
 
                     for(let i=0; i < data.data.length; i++){
                         let farm = data.data[i]._source;
@@ -27,13 +27,11 @@ $(function(){
                             <span>Crop: ${farm.crop} </span><br>
                             <span>Acreage: ${farm.acreage} </span><hr>
                         `);
-                        var availablefarms = [];
                         availablefarms.push(farm.name);
-			availablefarms.push(farm.crop);
-                        console.log(availablefarms);
                     }
 
                     $('#search').autocomplete({source: availablefarms});
+                    console.log('results : ' + availablefarms);
                     $('#searchContainer').show();
                 }else{
                     $('#searchContainer').show();
