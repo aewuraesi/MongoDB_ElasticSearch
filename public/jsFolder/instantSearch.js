@@ -12,17 +12,29 @@ $(function(){
             success: function(data, results) {
                 $('#searchResults').empty();
                 if (data.data!= null && data.success) {
+                    
                     console.log('success!');
                     $('#searchResults').append(` Total :<span>${data.data.length} Farm<span style="text-transform:lowercase">(s)</span></span><hr>`);
+                   
 
                     for(let i=0; i < data.data.length; i++){
                         let farm = data.data[i]._source;
+                        // var availablefarms = [farm.name];
+                        // console.log(availablefarms);
+                       
                         $('#searchResults').append(`
                             <span>Name: ${farm.name} </span><br>
                             <span>Crop: ${farm.crop} </span><br>
                             <span>Acreage: ${farm.acreage} </span><hr>
-                        `)
+                        `);
+                        var availablefarms = [];
+                        availablefarms.push(farm.name);
+                        availablefarms.push(farm.crop);
+                        
+                        console.log(availablefarms);
                     }
+
+                    $('#search').autocomplete({source: availablefarms});
                     $('#searchContainer').show();
                 }else{
                     $('#searchContainer').show();
