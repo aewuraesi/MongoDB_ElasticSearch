@@ -29,8 +29,6 @@ $(function(){
                         `);
                         var availablefarms = [];
                         availablefarms.push(farm.name);
-                        availablefarms.push(farm.crop);
-                        
                         console.log(availablefarms);
                     }
 
