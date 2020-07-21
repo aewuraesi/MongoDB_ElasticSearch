@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.3.2",
     "mongoosastic": "^4.5.1",
-    "mongoose": "^5.7.4",
+    "mongoose": "^5.7.5",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
